@@ -6,8 +6,9 @@ function goNext(page) {
   window.location.href = page;
 }
 
-/* Celebration */
+/* Celebration: balloons & hearts */
 function startCelebration() {
+  // balloons
   for (let i = 0; i < 25; i++) {
     let balloon = document.createElement("div");
     balloon.className = "balloon";
@@ -18,6 +19,7 @@ function startCelebration() {
     document.body.appendChild(balloon);
   }
 
+  // hearts
   for (let i = 0; i < 30; i++) {
     let heart = document.createElement("div");
     heart.className = "heart";
@@ -27,3 +29,10 @@ function startCelebration() {
     document.body.appendChild(heart);
   }
 }
+
+// Only run celebration on yes.html
+window.addEventListener("load", () => {
+  if (document.body.getAttribute("onload")?.includes("startCelebration")) {
+    startCelebration();
+  }
+});
