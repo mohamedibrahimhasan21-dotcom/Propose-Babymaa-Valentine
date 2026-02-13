@@ -6,30 +6,8 @@ function goNext(page) {
   window.location.href = page;
 }
 
-/* ---------- Floating Buttons ---------- */
-function floatButtons() {
-  const yesBtn = document.querySelector(".yes");
-  const noBtn = document.querySelector(".no");
-
-  function moveButton(btn) {
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-    const x = Math.random() * (screenWidth - btn.offsetWidth);
-    const y = Math.random() * (screenHeight * 0.6) + screenHeight * 0.2; // mid to bottom
-    btn.style.left = `${x}px`;
-    btn.style.top = `${y}px`;
-  }
-
-  // Move buttons every 1.5 seconds
-  setInterval(() => {
-    if (yesBtn) moveButton(yesBtn);
-    if (noBtn) moveButton(noBtn);
-  }, 1500);
-}
-
-/* ---------- Celebration ---------- */
+/* Celebration */
 function startCelebration() {
-  // balloons
   for (let i = 0; i < 25; i++) {
     let balloon = document.createElement("div");
     balloon.className = "balloon";
@@ -40,7 +18,6 @@ function startCelebration() {
     document.body.appendChild(balloon);
   }
 
-  // hearts
   for (let i = 0; i < 30; i++) {
     let heart = document.createElement("div");
     heart.className = "heart";
@@ -50,8 +27,3 @@ function startCelebration() {
     document.body.appendChild(heart);
   }
 }
-
-/* Start floating buttons on page load if .no exists */
-window.addEventListener("load", () => {
-  if (document.querySelector(".no")) floatButtons();
-});
