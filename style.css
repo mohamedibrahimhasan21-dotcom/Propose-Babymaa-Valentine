@@ -1,21 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  margin-top: 280px;
+}
+
+h1 {
+  font-size: 42px;
+  color: white;
+}
+
+.question {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: white;
+  color: #ff4d6d;
+  position: absolute;
+}
+
+/* Photo styling */
 .her-photo {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 20px;
   border: 5px solid white;
-  box-shadow: 0 0 30px rgba(255,255,255,0.8);
+  box-shadow: 0 0 30px white;
 
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
 
-  animation: floatPhoto 3s ease-in-out infinite;
+  animation: floatPhoto 3s infinite ease-in-out;
 }
 
 @keyframes floatPhoto {
   0% { transform: translateX(-50%) translateY(0px); }
-  50% { transform: translateX(-50%) translateY(-12px); }
+  50% { transform: translateX(-50%) translateY(-15px); }
   100% { transform: translateX(-50%) translateY(0px); }
+}
+
+/* balloons */
+.balloon {
+  width: 50px;
+  height: 70px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -100px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from { bottom: -100px; }
+  to { bottom: 110%; }
+}
+
+/* hearts */
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  animation: floatHeart 5s linear infinite;
+}
+
+@keyframes floatHeart {
+  from { top: 100%; }
+  to { top: -10%; }
 }
