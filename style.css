@@ -8,9 +8,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* ---------- Image ---------- */
 .her-photo {
   width: 220px;
   height: 220px;
@@ -19,16 +20,15 @@ body {
   border: 5px solid white;
   box-shadow: 0 0 30px white;
   margin-top: 20px;
+  z-index: 10;
 }
 
-/* ---------- Container ---------- */
 .container {
   text-align: center;
   margin-top: 20px;
   padding: 0 15px;
 }
 
-/* ---------- Headings ---------- */
 h1 {
   font-size: 36px;
   color: white;
@@ -41,7 +41,14 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* ---------- Buttons ---------- */
+/* Buttons side by side */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 button {
   padding: 15px 30px;
   border: none;
@@ -65,35 +72,49 @@ button:active {
   color: #ff4d6d;
 }
 
-/* ---------- Button Row ---------- */
-.button-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* ---------- No button progressive sizes ---------- */
+/* Progressive No button sizes */
 .no.small { font-size: 18px; padding: 12px 25px; }
 .no.smaller { font-size: 16px; padding: 10px 20px; }
 .no.tiniest { font-size: 14px; padding: 8px 18px; }
 
-/* Final Yes button */
 button.huge {
   font-size: 80px;
   padding: 25px 50px;
 }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 600px) {
-  .her-photo {
-    width: 160px;
-    height: 160px;
-  }
+/* Balloons */
+.balloon {
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -100px;
+  animation: floatUp linear infinite;
+}
 
+@keyframes floatUp {
+  from { bottom: -100px; }
+  to { bottom: 110%; }
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  animation: floatHeart 5s linear infinite;
+}
+
+@keyframes floatHeart {
+  from { top: 100%; }
+  to { top: -10%; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .her-photo { width: 160px; height: 160px; }
   h1 { font-size: 28px; }
   .question { font-size: 20px; }
-
   button { font-size: 20px; padding: 12px 25px; }
   .no.small { font-size: 18px; padding: 10px 20px; }
   .no.smaller { font-size: 16px; padding: 8px 18px; }
