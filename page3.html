@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Are You Sure? 🥺</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <title>Are You Sure? 🥺</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -15,8 +14,10 @@
   <h1>Are you sure? 🥺</h1>
   <div class="question">Will you be my Valentine?</div>
 
-  <button class="yes" onclick="goYes()">Yes 💖</button>
-  <button class="no smaller" onclick="goNext('page4.html')">No 😢</button>
+  <div class="button-row">
+    <button class="yes" onclick="goYes()">Yes 💖</button>
+    <button class="no smaller" onclick="goNext('page4.html')">No 😢</button>
+  </div>
 </div>
 
 </body>
