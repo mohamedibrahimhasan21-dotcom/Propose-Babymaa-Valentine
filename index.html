@@ -1,32 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Valentine ❤️</title>
 <link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </head>
 <body>
 
-<img src="babymaa1.jpg" class="her-photo">
+<img src="babymaa1.jpg" class="her-photo" alt="Her Photo">
 
 <div class="container">
+  <h1>Happy Valentine's Day ❤️</h1>
+  <div class="question">Will you be my Valentine?</div>
 
-<h1>Happy Valentine's Day ❤️</h1>
-
-<div class="question">
-Will you be my Valentine?
-</div>
-
-<button class="yes" onclick="goYes()" style="font-size:22px;">
-Yes 💖
-</button>
-
-<button class="no"
-onclick="goNext('page2.html')"
-style="top:70%; left:40%; font-size:20px;">
-No 😢
-</button>
-
+  <div class="button-row">
+    <button class="yes" onclick="goYes()">Yes 💖</button>
+    <button class="no" onclick="goNext('page2.html')">No 😢</button>
+  </div>
 </div>
 
 </body>
