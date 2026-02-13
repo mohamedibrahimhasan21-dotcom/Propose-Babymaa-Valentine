@@ -3,26 +3,30 @@ body {
   padding: 0;
   font-family: 'Comic Sans MS', cursive;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .container {
   text-align: center;
   margin-top: 280px;
+  padding: 0 15px;
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 36px;
   color: white;
+  line-height: 1.3;
 }
 
 .question {
-  font-size: 28px;
+  font-size: 24px;
   color: white;
   margin-bottom: 20px;
 }
 
+/* Buttons */
 button {
   padding: 15px 30px;
   border: none;
@@ -31,15 +35,35 @@ button {
   transition: 0.3s;
 }
 
+button:active {
+  transform: scale(0.95);
+}
+
 .yes {
   background: #ff4d6d;
   color: white;
+  font-size: 22px;
 }
 
 .no {
   background: white;
   color: #ff4d6d;
   position: absolute;
+  font-size: 20px;
+}
+
+/* sizes for progressively smaller no buttons */
+.no.small { font-size: 18px; top: 20%; left: 70%; }
+.no.smaller { font-size: 16px; top: 40%; left: 30%; }
+.no.tiniest { font-size: 14px; top: 50%; left: 85%; }
+
+button.huge { font-size: 80px; padding: 25px 50px; }
+
+/* First page buttons side by side */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* Photo styling */
@@ -50,19 +74,17 @@ button {
   border-radius: 20px;
   border: 5px solid white;
   box-shadow: 0 0 30px white;
-
   position: absolute;
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-
   animation: floatPhoto 3s infinite ease-in-out;
 }
 
 @keyframes floatPhoto {
-  0% { transform: translateX(-50%) translateY(0px); }
+  0% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-15px); }
-  100% { transform: translateX(-50%) translateY(0px); }
+  100% { transform: translateX(-50%) translateY(0); }
 }
 
 /* balloons */
@@ -92,4 +114,14 @@ button {
 @keyframes floatHeart {
   from { top: 100%; }
   to { top: -10%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h1 { font-size: 28px; }
+  .question { font-size: 20px; }
+  .yes { font-size: 20px; padding: 12px 25px; }
+  .no { font-size: 16px; }
+  .her-photo { width: 160px; height: 160px; }
+  button.huge { font-size: 50px; padding: 20px 40px; }
 }
