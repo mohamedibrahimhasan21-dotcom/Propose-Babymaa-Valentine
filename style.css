@@ -11,7 +11,7 @@ body {
 
 .container {
   text-align: center;
-  margin-top: 280px;
+  margin-top: 280px; /* desktop spacing */
   padding: 0 15px;
 }
 
@@ -120,30 +120,33 @@ button.huge { font-size: 80px; padding: 25px 50px; }
 }
 
 /* ---------- Mobile / Responsive ---------- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  /* Make image normal flow */
   .her-photo {
-    position: relative;      /* normal flow */
-    top: auto;
-    left: auto;
-    transform: none;
+    position: relative !important; /* remove absolute */
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
     width: 160px;
     height: 160px;
-    margin: 0 auto 20px;    /* center and margin below */
-    animation: floatPhoto 3s infinite ease-in-out; /* optional */
+    margin: 0 auto 20px;  /* center image above text/buttons */
+    animation: none !important; /* remove float to prevent overlap */
   }
 
+  /* Adjust container spacing */
   .container {
-    margin-top: 20px;       /* reduce top margin for small screens */
+    margin-top: 0 !important; /* remove large top margin */
     padding: 0 15px;
   }
 
+  /* Adjust fonts and buttons */
   h1 { font-size: 28px; }
   .question { font-size: 20px; }
   .yes { font-size: 20px; padding: 12px 25px; }
-  .no { font-size: 16px; }
+  .no { font-size: 16px; position: relative; top: auto; left: auto; }
   button.huge { font-size: 50px; padding: 20px 40px; }
 
-  /* Make first page buttons wrap nicely */
+  /* First page buttons side by side wrap */
   .button-row {
     flex-direction: column;
     gap: 15px;
