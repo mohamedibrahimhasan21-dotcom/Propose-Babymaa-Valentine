@@ -1,3 +1,4 @@
+/* ---------- Global Styles ---------- */
 body {
   margin: 0;
   padding: 0;
@@ -26,7 +27,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Buttons */
+/* ---------- Buttons ---------- */
 button {
   padding: 15px 30px;
   border: none;
@@ -52,7 +53,7 @@ button:active {
   font-size: 20px;
 }
 
-/* sizes for progressively smaller no buttons */
+/* Progressively smaller no buttons */
 .no.small { font-size: 18px; top: 20%; left: 70%; }
 .no.smaller { font-size: 16px; top: 40%; left: 30%; }
 .no.tiniest { font-size: 14px; top: 50%; left: 85%; }
@@ -64,9 +65,10 @@ button.huge { font-size: 80px; padding: 25px 50px; }
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* Photo styling */
+/* ---------- Photo Styling ---------- */
 .her-photo {
   width: 220px;
   height: 220px;
@@ -74,7 +76,8 @@ button.huge { font-size: 80px; padding: 25px 50px; }
   border-radius: 20px;
   border: 5px solid white;
   box-shadow: 0 0 30px white;
-  position: absolute;
+
+  position: absolute;  /* desktop floating */
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
@@ -87,7 +90,7 @@ button.huge { font-size: 80px; padding: 25px 50px; }
   100% { transform: translateX(-50%) translateY(0); }
 }
 
-/* balloons */
+/* ---------- Balloons ---------- */
 .balloon {
   width: 50px;
   height: 70px;
@@ -103,7 +106,7 @@ button.huge { font-size: 80px; padding: 25px 50px; }
   to { bottom: 110%; }
 }
 
-/* hearts */
+/* ---------- Hearts ---------- */
 .heart {
   position: absolute;
   color: red;
@@ -116,12 +119,33 @@ button.huge { font-size: 80px; padding: 25px 50px; }
   to { top: -10%; }
 }
 
-/* Responsive adjustments */
+/* ---------- Mobile / Responsive ---------- */
 @media (max-width: 600px) {
+  .her-photo {
+    position: relative;      /* normal flow */
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;    /* center and margin below */
+    animation: floatPhoto 3s infinite ease-in-out; /* optional */
+  }
+
+  .container {
+    margin-top: 20px;       /* reduce top margin for small screens */
+    padding: 0 15px;
+  }
+
   h1 { font-size: 28px; }
   .question { font-size: 20px; }
   .yes { font-size: 20px; padding: 12px 25px; }
   .no { font-size: 16px; }
-  .her-photo { width: 160px; height: 160px; }
   button.huge { font-size: 50px; padding: 20px 40px; }
+
+  /* Make first page buttons wrap nicely */
+  .button-row {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
